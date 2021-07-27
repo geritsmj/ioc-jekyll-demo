@@ -1,63 +1,56 @@
 ---
 layout: default
 title: Homepage
-fruit: 
-- title: Apple
-  description: the best fruit
-- title: banana
-  description: the amazing fruit
-- title: Orange
-  description: the beautiful fruit
+news: 
+- title: Big Sale
+  description: Exciting things are happening
+  date: 13th Jan
+  category: promo
+  url: https://www.sale.com  
+- title: Huge Sale
+  description: Awesome things are happening
+  date: 12th Sept
+  category: promo
+  url: https://www.huge.com
+- title: Closing Sale
+  description: Get it before its too late!
+  date: 10th Oct
+  category: promo
+  url: https://www.EOY.com
+- title: Extra Sale
+  description: Get it before its too late!
+  date: 10th Oct
+  category: promo
+  url: https://www.EOY.com  
+
 ---
 
 <section class="grid-spaceBetween padded bg-featured">
-    <div class="col-2 light-text">
-      <h2> Latest News </h2>
-      <p> Covering March & April 2021 </p>
-      
-    </div>
+  <div class="col-2 light-text">
+    <h2> Latest News </h2>
+    <p> Covering March & April 2021 </p>
+    
+  </div>
+
+  {% for item in page.news %}
     
   <!-------- First Card  ----->
-    <div class="col-3 card">
+    <div class="col-2 card">
       <div class="bg-image">
-        <span> News </span>
+        <span>{{item.category}} </span>
       </div>
       <div class="post-info">
-        <p class="date"> March 23rd 2021 </p>
-        <h3> What happened in Thailand ? </h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis quaerat perferendis fugiat officiis quibusdam at ipsam accusantium. </p>
-        <a href="#"> Find out more &nbsp; &#10148;</a>
+        <p class="date"> {{item.date}} </p>
+        <h3> {{item.title}} </h3>
+        <p> {{item.description}} </p>
+        <a href="{{item.url}} "> Find out more &nbsp; &#10148;</a>
         
       </div>  
     </div>
-  <!----------- Second Card -------->
-    <div class="col-3 card">
-      <div class="bg-image-2">
-        <span> events </span>
-      </div>
-      <div class="post-info">
-        <p class="date"> April 19th 2021 </p>
-        <h3> The Funkiest Medusas </h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis quaerat perferendis fugiat officiis quibusdam at ipsam accusantium. </p>
-        <a href="#"> Find out more &nbsp; &#10148;</a>
-        
-      </div> 
-      
-    </div>
+
+    {% endfor %}
+  
     
-  <!----------- Third Card  ---------------->
-    
-    <div class="col-3 card">
-       <div class="bg-image-3">
-        <span> contacts </span>
-      </div>
-      <div class="post-info">
-        <p class="date"> April 21st 2021 </p>
-        <h3> Who's Coding in Thailand ? </h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis quaerat perferendis fugiat officiis quibusdam at ipsam accusantium. </p>
-        <a href="#"> Find out more &nbsp; &#10148;</a>
-        
-      </div> 
-    </div>
+  
   </section>
 
